@@ -18,7 +18,7 @@ and `python3 -c` `'print(__import__("my_module").MyClass.my_function.__doc__)'`)
 * Allowed editors: `vi`, `vim`, `emacs`
 * All your files should end with a new line
 * All your test files should be inside a folder tests
-* You have to use the unittest module
+* You have to use the [unittest module](https://docs.python.org/3.4/library/unittest.html#module-unittest)
 * All your test files should be python files (extension: `.py`)
 * All your test files and folders should start by `test_`
 * Your file organization in the tests folder should be the same as your project
