@@ -69,7 +69,12 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_destroy(self):
-        pass
+        if not args:
+            print("** class name missing **")
+        elif args[0] not in self.__allowed:
+            print("** class doesn't exist **")
+        elif not args[1]:
+            print("** instance id missing **")
 
     def do_all(self):
         pass
