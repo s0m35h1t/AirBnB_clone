@@ -68,13 +68,14 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self):
         pass
 
-    def do_destroy(self):
+    def do_destroy(self, args):
         if not args:
             print("** class name missing **")
-        elif args[0] not in self.__allowed:
+        elif args[0] not in HBNBCommand.__classes_names:
             print("** class doesn't exist **")
         elif not args[1]:
             print("** instance id missing **")
+        data = storage.all()
 
     def do_all(self):
         pass
