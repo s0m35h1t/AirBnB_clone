@@ -45,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
         Returns:
             (list)
         """
-        match= re.search(r"\{(.*?)\}", line)
+        match = re.search(r"\{(.*?)\}", line)
         if match is None:
             return [i.strip(",") for i in split(line)]
         else:
