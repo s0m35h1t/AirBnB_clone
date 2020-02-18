@@ -31,3 +31,7 @@ and `python3 -c` `'print(__import__("my_module").MyClass.my_function.__doc__)'`)
 * All your functions (inside and outside a class) should have a documentation (`python3 -c 'print(__import__("my_module").my_function.__doc__)'` 
 and `python3 -c` `'print(__import__("my_module").MyClass.my_function.__doc__)'`)
 * We strongly encourage you to work together on test cases, so that you dont miss any edge case
+
+# The command interpreter
+A command interpreter is the part of a computer operating system that understands and executes commands that are entered interactively 
+by a human being or from a program.

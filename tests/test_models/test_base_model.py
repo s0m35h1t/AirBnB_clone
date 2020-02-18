@@ -10,3 +10,4 @@ from models.base_model import BaseModel
 class TestBaseModelMethods(unittest.TestCase):
 
     pass
+
