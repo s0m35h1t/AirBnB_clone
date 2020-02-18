@@ -5,6 +5,7 @@ Define: City class unitests
 import unittest
 
 from models.city import City
+import models
 from datetime import datetime
 
 class TestCityMethods(unittest.TestCase):
