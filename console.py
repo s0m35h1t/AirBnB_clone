@@ -26,7 +26,7 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb) "
-    __types = {str, int, float}
+    types = {str, int, float}
     __classes_names = {
         "BaseModel",
         "User",
@@ -56,7 +56,6 @@ class HBNBCommand(cmd.Cmd):
         line_list = [i.strip(",") for i in split(line[:match.span()[0]])]
         line_list.append(match.group())
         return line_list
-
 
     def default(self, arg):
         """When Invalid syntax typed"""
@@ -165,8 +164,9 @@ class HBNBCommand(cmd.Cmd):
                 if type(eval(arg_list[2])) == dict:
                     for k, v in eval(arg_list[2]).items():
                         if (k in obj.__class__.__dict__.keys() and
-                                type(obj.__class__.__dict__[k]) in self.__types):
-                            obj.__dict__[k] = type(obj.__class__.__dict__[k])(v)
+                                type(obj.__class__.__dict__[k]) in self.types):
+                            obj.__dict__[k] = type(
+                                obj.__class__.__dict__[k])(v)
                         else:
                             obj.__dict__[k] = v
                     storage.save()
