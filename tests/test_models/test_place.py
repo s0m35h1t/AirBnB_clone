@@ -23,3 +23,7 @@ class TestPlaceMethods(unittest.TestCase):
 
     def test_updated_at_datetime(self):
         self.assertEqual(datetime, type(Place().updated_at))
+
+
+if __name__ == "__main__":
+    unittest.main()
