@@ -157,17 +157,19 @@ class HBNBCommand(cmd.Cmd):
             print("** attribute name missing **")
             return False
         if len(arg_list) == 3:
-            if type(eval(arg_list[2])) == dict:
-                for k, v in eval(arg_list[2]).items():
-                    if (k in obj.__class__.__dict__.keys() and
-                            type(obj.__class__.__dict__[k]) in self.__types):
-                        obj.__dict__[k] = type(obj.__class__.__dict__[k])(v)
-                    else:
-                        obj.__dict__[k] = v
-                storage.save()
+            try:
+                if type(eval(arg_list[2])) == dict:
+                    for k, v in eval(arg_list[2]).items():
+                        if (k in obj.__class__.__dict__.keys() and
+                                type(obj.__class__.__dict__[k]) in self.__types):
+                            obj.__dict__[k] = type(obj.__class__.__dict__[k])(v)
+                        else:
+                            obj.__dict__[k] = v
+                    storage.save()
+                    return False
+            except Exception:
+                print("** value name missing **")
                 return False
-            print("** value name missing **")
-            return False
 
         if arg_list[2] in obj.__class__.__dict__.keys():
             obj.__dict__[arg_list[2]] = type(
