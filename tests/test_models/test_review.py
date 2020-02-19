@@ -24,3 +24,7 @@ class TestReviewMethods(unittest.TestCase):
 
     def test_updated_at_is_datetime(self):
         self.assertEqual(datetime, type(Review().updated_at))
+
+
+if __name__ == "__main__":
+    unittest.main()

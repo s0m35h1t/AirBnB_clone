@@ -3,7 +3,8 @@
 Define: Place class unitests
 """
 import unittest
-
+import models
+from datetime import datetime
 from models.place import Place
 
 

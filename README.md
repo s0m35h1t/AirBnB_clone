@@ -32,6 +32,18 @@ and `python3 -c` `'print(__import__("my_module").MyClass.my_function.__doc__)'`)
 and `python3 -c` `'print(__import__("my_module").MyClass.my_function.__doc__)'`)
 * We strongly encourage you to work together on test cases, so that you dont miss any edge case
 
-# The command interpreter
+## The command interpreter
 A command interpreter is the part of a computer operating system that understands and executes commands that are entered interactively 
 by a human being or from a program.
+
+## The Console
+The console is a command line interpreter that permits management of the backend of HolbertonBnB.
+It can be used to handle and manipulate all classes utilized by the application (achieved by calls on the storage object)
+
+## Console Commands
+* Create
+* Show
+* Destroy
+* All
+* Count
+* Update
