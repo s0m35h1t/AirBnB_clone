@@ -47,10 +47,13 @@ class HBNBCommand(cmd.Cmd):
         """
         match = re.search(r"\{(.*?)\}", line)
         if match is None:
-            return [i.strip(",") for i in split(line)]
-        else:
+            match = re.search(r"\[(.*?)\]", line)
+            if match is None:
+                return [i.strip(",") for i in split(line)]
             argl = [i.strip(",") for i in split(line[:match.span()[0]])]
             return argl.append(match.group())
+        argl = [i.strip(",") for i in split(line[:match.span()[0]])]
+        return argl.append(match.group())
 
     def default(self, arg):
         """When Invalid syntax typed"""
