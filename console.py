@@ -50,10 +50,13 @@ class HBNBCommand(cmd.Cmd):
             match = re.search(r"\[(.*?)\]", line)
             if match is None:
                 return [i.strip(",") for i in split(line)]
-            argl = [i.strip(",") for i in split(line[:match.span()[0]])]
-            return argl.append(match.group())
-        argl = [i.strip(",") for i in split(line[:match.span()[0]])]
-        return argl.append(match.group())
+            line_list = [i.strip(",") for i in split(line[:match.span()[0]])]
+            line.append(match.group())
+            return line
+        line_list = [i.strip(",") for i in split(line[:match.span()[0]])]
+        line_list.append(match.group())
+        return line_list
+
 
     def default(self, arg):
         """When Invalid syntax typed"""
@@ -138,6 +141,7 @@ class HBNBCommand(cmd.Cmd):
         Usage: update <class name> <id> <attribute name> "<attribute value>"
         """
         arg_list = self.arg_parser(arg)
+        print(arg_list)
         if not len(arg_list):
             print("** class name missing **")
             return False
